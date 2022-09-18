@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .btn {
+            text-decoration: none; 
+        }
+        .danger{
+            color: rgb(197, 38, 38);
+        }
+    </style>
+</head>
+<html>
+<body style="text-align: center;" >
+
+
+<h1>Members</h1>
+<table style="width: 40%; margin: auto;" border="1" >
+{% for x in mymembers %}
+<tr>
+    <td> {{x.id}} </td>
+    <td> {{x.firstname}} </td>
+    <td  > {{x.lastname}} </td>
+    <td><a class="btn danger" href="delete/{{x.id}}">delete</a></td>
+    <td><a class="btn" href="update/{{x.id}}">update</a></td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+    <a href="add/">Add member</a>
+</p>
+</body>
+</html>
