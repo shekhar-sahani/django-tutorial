@@ -1,11 +1,12 @@
 from django.urls import path
-from . import views
+from .views import greet_user, index, add, addrecord, delete, update, updaterecord
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('add/', views.add, name='add'),
-    path('add/addrecord/', views.addrecord, name='addrecord'),
-    path('delete/<int:id>', views.delete, name='delete'),
-    path('update/<int:id>', views.update, name='update'),
-    path('update/updaterecord/<int:id>', views.updaterecord, name='updaterecord')
+    path('', index, name='index'),
+    path('add/', add, name='add'),
+    path('add/addrecord/', addrecord, name='addrecord'),
+    path('delete/<int:id>', delete, name='delete'),
+    path('update/<int:id>', update, name='update'),
+    path('update/updaterecord/<int:id>', updaterecord, name='updaterecord'),
+    path('user', greet_user, name='user_greet')
 ]

@@ -45,3 +45,11 @@ def updaterecord(request, id):
     member.lastname = last
     member.save()
     return HttpResponseRedirect(reverse('index'))
+
+def greet_user(request):
+    user = {'name': 'shekhar'}
+    context = {
+        'name': user
+    }
+    template = loader.get_template('greetings.html')
+    return HttpResponse(template.render(context, request))
